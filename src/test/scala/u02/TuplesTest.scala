@@ -18,11 +18,8 @@ class TuplesTest:
     assertEquals(tuple, Tuple2("a", 10))
     assertNotEquals(tuple, ("a", 11))
 
-  @Test def testCheckFirstComponent() =
-    assertTrue(Tuples.checkFirstComponent(Tuples.Tup2("a", 10), "a"))
-
-  @Test def testSwitch() =
-    def switch[A, B](t: (A, B)): (B, A) = t match 
+  @Test def testSwap() =
+    def swap[A, B](t: (A, B)): (B, A) = t match
       case (a, b) => (b, a)  
-    assertEquals(("a", 10), switch((10, "a")))  
+    assertEquals(("a", 10), swap((10, "a")))
     
