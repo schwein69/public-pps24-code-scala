@@ -5,7 +5,9 @@ object Part2_b extends App:
 
   def genericNeg[A](pred: (A => Boolean)): A => Boolean = s => !pred(s)
 
-  val neg: ((String => Boolean)) => (String => Boolean) = pred => (s => !pred(s))
+  val neg: (String => Boolean) => (String => Boolean) = pred => (s => !pred(s))
+  
+  
 
   val empty: String => Boolean = _ == ""
   val notEmpty = neg(empty) // which type of notEmpty?

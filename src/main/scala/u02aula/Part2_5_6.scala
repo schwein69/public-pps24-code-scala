@@ -8,7 +8,7 @@ object Part2_5_6 extends App:
 
   def genericComposeFunction[A](f: A => A, g: A => A): A => A = x => f(g(x))
 
-  println(composeFunction(_ - 1, _ * 2)(5))
+  println(genericComposeFunction[Int](_ - 1, _ * 2)(5))
 
   def composeThree[A, B, C, D](f: C => D, g: B => C, h: A => B): A => D = x => f(g(h(x)))
 
